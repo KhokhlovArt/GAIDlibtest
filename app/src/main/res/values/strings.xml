@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GAID lib test</string>
+    <string name="show_original_gaid">Show original GAID</string>
+    <string name="fake_gaid">Fake GAID:</string>
+    <string name="original_gaid">Original GAID:</string>
+    <string name="show_fake_gaid">Show fake GAID</string>
+</resources>
