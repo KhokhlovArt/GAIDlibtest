@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
                         try {
 
-                            final String id = new GoogleAdvertisingIdGetter().getFakeGaid( getApplicationContext(), getApplicationContext().getPackageName(), getApplicationContext().getPackageName());
+                            final String id = new GoogleAdvertisingIdGetter().getFakeGaid( getApplicationContext(), getApplicationContext().getPackageName(), "");
                             setTextInMainGIThred(R.id.lbl_fake_gaid, id);
                         } catch (IOException e) {
                             // Unrecoverable error connecting to Google Play services (e.g.,
