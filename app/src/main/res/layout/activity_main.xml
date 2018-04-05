@@ -1,58 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_m"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.mks.gaidlibtest.MainActivity">
 
-    <Button
-        android:id="@+id/btn_show_original_gaid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/show_original_gaid"
-        android:layout_centerHorizontal="true"
-        />
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_show_original_gaid"
-        android:layout_toLeftOf="@+id/lbl_original_gaid"
-        android:layout_toStartOf="@+id/lbl_original_gaid"
-        android:text="@string/original_gaid" />
-    <TextView
-        android:id="@+id/lbl_original_gaid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" "
-        android:layout_below="@+id/btn_show_original_gaid"
-        android:layout_centerHorizontal="true"
-        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/lbl_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btn1"
+                android:layout_alignBottom="@+id/btn1"
+                android:layout_toEndOf="@+id/btn1"
+                android:layout_toRightOf="@+id/btn1"
+                android:text="_getOriginalID_" />
 
-    <Button
-        android:id="@+id/btn_show_fake_gaid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lbl_original_gaid"
-        android:layout_marginTop="54dp"
-        android:text="@string/show_fake_gaid"
-        android:layout_centerHorizontal="true"/>
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="14dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="15dp"
+                android:text="getOriginalID" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_show_fake_gaid"
-        android:layout_toLeftOf="@+id/lbl_fake_gaid"
-        android:layout_toStartOf="@+id/lbl_fake_gaid"
-        android:text="@string/fake_gaid" />
-    <TextView
-        android:id="@+id/lbl_fake_gaid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" "
-        android:layout_below="@+id/btn_show_fake_gaid"
-        android:layout_centerHorizontal="true"
-        />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignLeft="@+id/btn1"
+                android:layout_alignStart="@+id/btn1"
+                android:layout_below="@+id/btn1"
+                android:layout_marginTop="15dp"
+                android:text="getFakeGaid"
+                android:id="@+id/btn2"
+                />
+
+            <TextView
+                android:id="@+id/lbl_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btn2"
+                android:layout_alignBottom="@+id/btn2"
+                android:layout_toEndOf="@+id/btn1"
+                android:layout_toRightOf="@+id/btn1"
+                android:text="_fakeID_" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btn2"
+                android:layout_alignStart="@+id/btn2"
+                android:layout_below="@+id/btn2"
+                android:layout_marginTop="15dp"
+                android:text="generateGUID_default"
+                android:id="@+id/btn3"
+                />
+
+            <TextView
+                android:id="@+id/lbl_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btn3"
+                android:layout_alignBottom="@+id/btn3"
+                android:layout_toEndOf="@+id/btn3"
+                android:layout_toRightOf="@+id/btn3"
+                android:text="_generateGUID_" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btn3"
+                android:layout_alignStart="@+id/btn3"
+                android:layout_below="@+id/btn3"
+                android:layout_marginTop="15dp"
+                android:text="generateGUID_Random"
+                android:id="@+id/btn4"
+                />
+
+            <TextView
+                android:id="@+id/lbl_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btn4"
+                android:layout_alignBottom="@+id/btn4"
+                android:layout_toEndOf="@+id/btn3"
+                android:layout_toRightOf="@+id/btn3"
+                android:text="_generateGUID_" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btn4"
+                android:layout_alignStart="@+id/btn4"
+                android:layout_below="@+id/btn4"
+                android:layout_marginTop="15dp"
+                android:text="getInnerPublisherIDs"
+                android:id="@+id/btn5"
+                />
+
+            <TextView
+                android:id="@+id/lbl_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btn5"
+                android:layout_alignBottom="@+id/btn5"
+                android:layout_toEndOf="@+id/btn4"
+                android:layout_toRightOf="@+id/btn4"
+                android:text="_getInnerPublisherIDs_" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btn5"
+                android:layout_alignStart="@+id/btn5"
+                android:layout_below="@+id/btn5"
+                android:layout_marginTop="15dp"
+                android:text="getFilePublisherIDs"
+                android:id="@+id/btn6"
+                />
+
+            <TextView
+                android:id="@+id/lbl_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btn6"
+                android:layout_alignBottom="@+id/btn6"
+                android:layout_toEndOf="@+id/btn5"
+                android:layout_toRightOf="@+id/btn5"
+                android:text="_getInnerPublisherIDs_" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
