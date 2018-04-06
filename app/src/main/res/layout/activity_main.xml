@@ -143,6 +143,28 @@
                 android:layout_toEndOf="@+id/btn5"
                 android:layout_toRightOf="@+id/btn5"
                 android:text="_getInnerPublisherIDs_" />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btn6"
+                android:layout_alignStart="@+id/btn6"
+                android:layout_below="@+id/btn6"
+                android:layout_marginTop="15dp"
+                android:text="_getGUID"
+                android:id="@+id/btn7"
+                />
+
+            <TextView
+                android:id="@+id/lbl_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/btn7"
+                android:layout_alignBottom="@+id/btn7"
+                android:layout_toEndOf="@+id/btn6"
+                android:layout_toRightOf="@+id/btn6"
+                android:text="_getGUID_" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

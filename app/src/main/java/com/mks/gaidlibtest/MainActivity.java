@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
         final TextView lbl_5 = (TextView)  findViewById(R.id.lbl_5);
         Button btn6  = (Button) findViewById(R.id.btn6);
         final TextView lbl_6 = (TextView)  findViewById(R.id.lbl_6);
+        Button btn7  = (Button) findViewById(R.id.btn7);
+        final TextView lbl_7 = (TextView)  findViewById(R.id.lbl_7);
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,6 +126,28 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String data = new GoogleAdvertisingIdGetter().getInnerPublisherIDs(getApplicationContext(), "key_inner");
                 lbl_6.setText(""+data);
+            }
+        });
+
+        btn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AsyncTask.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        String data = null;
+                        try {
+                            data = new GoogleAdvertisingIdGetter().getGAID(getApplicationContext(), "");
+                        } catch (GooglePlayServicesNotAvailableException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (GooglePlayServicesRepairableException e) {
+                            e.printStackTrace();
+                        }
+                        setTextInMainGIThred(R.id.lbl_7, "" + data);
+                    }
+                });
             }
         });
     }
