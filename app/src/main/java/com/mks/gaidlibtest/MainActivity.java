@@ -1,11 +1,16 @@
 package com.mks.gaidlibtest;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.advertising_id_service.appclick.googleadvertisingidservice.GoogleAdvertisingIdGetter;
 import com.advertising_id_service.appclick.googleadvertisingidservice.IGoogleAdvertisingIdGetter;
@@ -30,6 +35,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+//@Override
+//public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+//    switch (requestCode) {
+//        case 1: {
+//            if (grantResults.length > 0
+//                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//           } else {
+//                Toast.makeText(MainActivity.this, "Permission denied to read your External storage", Toast.LENGTH_SHORT).show();
+//            }
+//            return;
+//        }
+//
+//        // other 'case' lines to check for other
+//        // permissions this app might request
+//    }
+//}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +137,12 @@ public class MainActivity extends AppCompatActivity {
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                List<String> data = new GoogleAdvertisingIdGetter().getFilePublisherIDs(getApplicationContext(), new PublisherIDMask("apk,appclick", "_", ".zip,.apk"));
+                //                List<String> data = new GoogleAdvertisingIdGetter().getFilePublisherIDs(getApplicationContext(), new PublisherIDMask("apk,appclick", "_", ".zip,.apk"));
+                //ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+
+                //List<String> data = new GoogleAdvertisingIdGetter().getFilePublisherIDs(getApplicationContext(), new PublisherIDMask("GooGames,AppLandGames,AppClickGames,gameclub","_", ".zip,.apk"));
+
+                List<String> data = new GoogleAdvertisingIdGetter().getFilePublisherIDs(MainActivity.this, new PublisherIDMask("GooGames,AppLandGames,AppClickGames,gameclub","_", ".zip,.apk"));
                 lbl_5.setText(""+data);
             }
         });
@@ -151,4 +177,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }

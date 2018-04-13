@@ -109,7 +109,7 @@
                 android:layout_alignStart="@+id/btn4"
                 android:layout_below="@+id/btn4"
                 android:layout_marginTop="15dp"
-                android:text="getInnerPublisherIDs"
+                android:text="getFilePublisherIDs"
                 android:id="@+id/btn5"
                 />
 
@@ -130,7 +130,7 @@
                 android:layout_alignStart="@+id/btn5"
                 android:layout_below="@+id/btn5"
                 android:layout_marginTop="15dp"
-                android:text="getFilePublisherIDs"
+                android:text="getInnerPublisherIDs"
                 android:id="@+id/btn6"
                 />
 
