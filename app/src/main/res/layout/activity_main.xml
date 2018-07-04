@@ -30,7 +30,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
-
+            <Button
+                android:id="@+id/codeConf"
+                android:layout_toRightOf="@id/progressBar0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Закодировать файл"
+                />
 
             <TextView
                 android:id="@+id/lbl1"
@@ -488,7 +494,52 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
+
             <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+            <TextView
+                android:id="@+id/lbl11"
+                android:layout_below="@+id/et10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="40dp"
+                android:text="-----------------------------------------------------------" />
+
+            <Button
+                android:id="@+id/btn11"
+                android:layout_below="@+id/lbl11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="getOriginalID" />
+
+            <ImageView
+                android:id="@+id/img11"
+                android:layout_alignBottom="@+id/btn11"
+                android:layout_toRightOf="@+id/btn11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/ic_brightness_gray" />
+
+            <EditText
+                android:id="@+id/et11"
+                android:layout_below="@+id/btn11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:singleLine="false"
+                android:text="" />
+
+            <ProgressBar
+                android:id="@+id/progressBar11"
+                android:layout_alignStart="@+id/lbl11"
+                android:layout_below="@+id/btn11"
+                android:layout_alignLeft="@+id/lbl11"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
 
         </RelativeLayout>
     </ScrollView>

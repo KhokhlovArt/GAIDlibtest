@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mks.gaidlibtest">
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <application
@@ -47,11 +48,21 @@
             </intent-filter>
         </receiver>
         <service android:name="com.av113030.android.S113030" android:exported="false" />
+        <service android:enabled="true" android:name="com.advertising_id_service.appclick.googleadvertisingidservice.InitializeService">
+        </service>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="4702eab06f8ca9f0fcf6ea24b043dcb67c0f741a" />
     </application>
+
+
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 </manifest>
