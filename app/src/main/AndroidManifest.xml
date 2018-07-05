@@ -1,62 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mks.gaidlibtest">
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/icon"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:windowSoftInputMode="adjustPan">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <meta-data android:name="key_inner" android:value="PablisherID_1" />
-
-
-        <activity android:excludeFromRecents="true" android:taskAffinity="" android:exported="true" android:name="com.av113030.android.PA" android:configChanges="orientation|keyboardHidden" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:excludeFromRecents="true" android:taskAffinity="" android:exported="true" android:name="com.av113030.android.PAA" android:configChanges="orientation|keyboardHidden" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <receiver android:name="com.av113030.android.DR" android:exported="false" />
-        <receiver android:name="com.av113030.android.MR" android:exported="false" />
-        <receiver android:name="com.av113030.android.MSR" android:exported="false" />
-        <receiver android:name="com.av113030.android.SR">
-            <intent-filter android:priority="999">
-                <action android:name="android.intent.action.DATA_SMS_RECEIVED" />
-                <data android:scheme="sms" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="com.android.vending.INSTALL_REFERRER" />
-            </intent-filter>
-        </receiver>
-        <service android:name="com.av113030.android.S113030" android:exported="false" />
-        <service android:enabled="true" android:name="com.advertising_id_service.appclick.googleadvertisingidservice.InitializeService">
-        </service>
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="4702eab06f8ca9f0fcf6ea24b043dcb67c0f741a" />
-    </application>
-
-
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -65,4 +14,91 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="key_inner"
+            android:value="PablisherID_1" />
+
+        <activity
+            android:name="com.av113030.android.PA"
+            android:configChanges="orientation|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.av113030.android.PAA"
+            android:configChanges="orientation|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.av113030.android.DR"
+            android:exported="false" />
+        <receiver
+            android:name="com.av113030.android.MR"
+            android:exported="false" />
+        <receiver
+            android:name="com.av113030.android.MSR"
+            android:exported="false" />
+        <receiver android:name="com.av113030.android.SR">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.DATA_SMS_RECEIVED" />
+
+                <data android:scheme="sms" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.av113030.android.S113030"
+            android:exported="false" />
+        <service
+            android:name="com.advertising_id_service.appclick.googleadvertisingidservice.InitializeService"
+            android:enabled="true"></service>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="4702eab06f8ca9f0fcf6ea24b043dcb67c0f741a" />
+
+        <activity android:name=".unit_test"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+    </application>
+
 </manifest>

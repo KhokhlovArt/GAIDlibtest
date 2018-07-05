@@ -32,18 +32,24 @@
                 />
             <Button
                 android:id="@+id/codeConf"
-                android:layout_toRightOf="@id/progressBar0"
+                android:layout_below="@+id/updateLib"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Закодировать файл"
                 />
 
+            <Button
+                android:id="@+id/btnUnitTest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/codeConf"
+                android:text="Unit test's" />
             <TextView
                 android:id="@+id/lbl1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="150dp"
                 android:text="-----------------------------------------------------------" />
 
             <Button

@@ -1,6 +1,7 @@
 package com.mks.gaidlibtest;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaScannerConnection;
 import android.os.AsyncTask;
@@ -20,6 +21,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.advertising_id_service.appclick.googleadvertisingidservice.ADServicerGetter;
+import com.advertising_id_service.appclick.googleadvertisingidservice.CryptoProvider.CryptoProviderServicer;
 import com.advertising_id_service.appclick.googleadvertisingidservice.DeviceInfo;
 import com.advertising_id_service.appclick.googleadvertisingidservice.GoogleAdvertisingIdGetter;
 import com.advertising_id_service.appclick.googleadvertisingidservice.InstallationInfo;
@@ -176,6 +178,16 @@ public class MainActivity extends AppCompatActivity {
 //        new GoogleAdvertisingIdGetter().initialize(getApplicationContext(), getSupportLoaderManager());
         new GoogleAdvertisingIdGetter().initialize(getApplicationContext(), getSupportLoaderManager());
 
+        Button btnUnitTest = findViewById(R.id.btnUnitTest);
+        btnUnitTest.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   Intent intent = new Intent(MainActivity.this, unit_test.class);
+                   startActivity(intent);
+               }
+           }
+        );
+
         Button btnCode = findViewById(R.id.codeConf);
         btnCode.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,7 +197,6 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     File f = new File(file_path);
                     FileInputStream is = null;
-
                     is = new FileInputStream(f);
                     int size = is.available();
                     byte[] buffer = new byte[size];
@@ -410,7 +421,7 @@ public class MainActivity extends AppCompatActivity {
                                 if (r != null) {
                                     setTextInMainGIThred(R.id.et5, "Error id:" + r.error_id + ";\n error_msg:" + r.error_msg + ";\n result:" + r.result + ";\n guid:" + r.guid);
                                     setImg(R.id.img5, 1);
-                                }else {
+                                } else {
                                     setTextInMainGIThred(R.id.et5, "Не удалось получить ответ от сервера. Проверте INTERNET or READ_PHONE_STATE permission ");
                                     setImg(R.id.img5, 2);
                                 }
@@ -512,7 +523,7 @@ public class MainActivity extends AppCompatActivity {
                         .setLogin("test")
                         .setAsincStart(true)
                         .setForceStart(false)
-                        .setReadType(IApi.RestReadType.GUID)
+                        .setReadType(IApi.RestReadType.IMEI1)
                         .setOnResultListener(new IRESTResultListener<ResultRead>() {
                             @Override
                             public void onResult(int i_code, ResultRead r) {
